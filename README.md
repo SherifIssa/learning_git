@@ -1,5 +1,2 @@
 # learning_git Marlene
-
-1
-2
-3
+adding a new feature
