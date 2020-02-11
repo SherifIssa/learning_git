@@ -105,11 +105,11 @@ This is the main user interface for the component configuration. It allows the u
 
 | Symbol | Name|Example | Result                 |                                   
 |--------|--------------|------------------------|----------------------------------|
-| I.     | Integer      | `{{.MyProp Format=I}}` | 12,345                           |
-| N.     | No format    | `{{.MyProp Format=N}}` | The property clipboard value.    |
-| C.     | Currency     | `{{.MyProp Format=C}}` | $12,345.00 (based on the locale) |
-| K.     | Thousands    | `{{.MyProp Format=K}}` | 12.34K                           |
-| M.     | Millions     | `{{.MyProp Format=M}}` | 1.23M                            |
+| I     | Integer      | `{{.MyProp Format=I}}` | 12,345                           |
+| N     | No format    | `{{.MyProp Format=N}}` | The property clipboard value.    |
+| C     | Currency     | `{{.MyProp Format=C}}` | $12,345.00 (based on the locale) |
+| K     | Thousands    | `{{.MyProp Format=K}}` | 12.34K                           |
+| M     | Millions     | `{{.MyProp Format=M}}` | 1.23M                            |
 
 > By default, the component uses the requestor locale to generate currency symbol. If a different locale is selected in the settings screen, the component uses the settings locale.
 
