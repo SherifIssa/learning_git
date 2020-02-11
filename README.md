@@ -211,19 +211,19 @@ $Image action generates a PowerPoint image from a binary file.
 
 Pega Mail Merge is the expression language behind Pega PowerPoint Generator. Users  can include expressions in their PowerPoint template to reference clipboard properties or to perform actions. 
 
-IDENTIFIER:				Any valid Pega property
-property_reference:	Property | DataPage_Property | PageList Property
-rule_reference: 			Class '.' IDENTIFIER+
-reference:					property_reference | rule_reference
-action:						'$'(Table|Bullets|PieChart|BarChart|LineChart|Image|SectionTable)
-param:						IDENTIFIER'='reference
-params:						param (' ' param)*
-columns_expr:				Columns '=' '[' IDENTIFIER (', ' 	IDENTIFIER)* ']'
-headers_expr:			Headers '=' '[' IDENTIFIER (', ' 	IDENTIFIER)* ']'
-format_expr:					Format '=' '[' IDENTIFIER (', ' 	IDENTIFIER)* ']'
-action_expr:				action ' ' reference
-property_stmt:			'{{' rule_reference ('Format' '=' IDENTIFIER)? params? '}}'
-action_stmt:				'{{' action_expr columns_expr? headers_expr? format_expr? params? '}}'
+IDENTIFIER:		Any valid Pega property  
+property_reference:	Property | DataPage_Property | PageList Property  
+rule_reference: 	Class '.' IDENTIFIER+   
+reference:		property_reference | rule_reference   
+action:			'$'(Table|Bullets|PieChart|BarChart|LineChart|Image|SectionTable)  
+param:			IDENTIFIER'='reference  
+params:			param (' ' param)*  
+columns_expr:		Columns '=' '[' IDENTIFIER (', ' IDENTIFIER)* ']'  
+headers_expr:		Headers '=' '[' IDENTIFIER (', ' IDENTIFIER)* ']'  
+format_expr:		Format  '=' '[' IDENTIFIER (', ' IDENTIFIER)* ']'  
+action_expr:		action ' ' reference  
+property_stmt:		'{{' rule_reference ('Format' '=' IDENTIFIER)? params? '}}'  
+action_stmt:		'{{' action_expr columns_expr? headers_expr? format_expr? params? '}}'  
 
 > Actions are not case sensitive
 
