@@ -210,7 +210,7 @@ $Image action generates a PowerPoint image from a binary file.
 ## Pega Mail Merge Syntax
 
 Pega Mail Merge is the expression language behind Pega PowerPoint Generator. Users  can include expressions in their PowerPoint template to reference clipboard properties or to perform actions. 
-
+<pre>
 IDENTIFIER:             Any valid Pega property  
 property_reference:     Property | DataPage_Property | PageList Property  
 rule_reference:         Class '.' IDENTIFIER+   
@@ -224,7 +224,7 @@ format_expr:            Format  '=' '[' IDENTIFIER (', ' IDENTIFIER)* ']'
 action_expr:            action ' ' reference  
 property_stmt:          '{{' rule_reference ('Format' '=' IDENTIFIER)? params? '}}'  
 action_stmt:            '{{' action_expr columns_expr? headers_expr? format_expr? params? '}}'  
-
+</pre>
 > Actions are not case sensitive
 
 ## Limitations
