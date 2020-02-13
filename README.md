@@ -22,16 +22,16 @@ Pega PowerPoint Generator is an Exchange component that enables Pega users to ge
 * Generate native PowerPoint pie, bar and line graphs
 * Include images from Pega in their slides
 
-The template is a PowerPoint file, it can include any PowerPoint component as well as references to Pega properties and actions. References and actions can be included using Pega Mail Merge expressions.
+The template is a PowerPoint file. it can include any PowerPoint components as well as references to Pega properties and actions. References and actions can be included using Pega Mail Merge expressions.
 
 ## Installation
 
 1. Download `pegaPowerPointGenerator_pkg.zip` from Pega Exchange.
-2. Unzip `pegaPowerPointGenerator_pkg.zip`, that will create `pegaPowerPointGenerator_pkg` directory that contains the following three sub-directories: 
+2. Unzip `pegaPowerPointGenerator_pkg.zip`, to create `pegaPowerPointGenerator_pkg` directory that contains the following three sub-directories: 
 	 - `archives`: contains `pegaPowerPointGenerator_v1.zip` installable RAP.
 	 - `examples`: contains `pptxdemo.zip` sample application and `ppt-demo.pptx` sample  template.
 	 -  `documents`: contains `README.md` file 
-3. Import `pegaPowerPointGenerator_v1.zip` RAP from the `rules` directory
+3. Import `pegaPowerPointGenerator_v1.zip` RAP from the `archives` directory
 4. Restart your Pega application server.
 5. Add `PegaPowerPointGenerator`  ruleset to your application rulesets.
 6. Add `GeneratePowerPoint` Flow Action to your process.
@@ -44,7 +44,7 @@ The template is a PowerPoint file, it can include any PowerPoint component as we
  
 ## Sample Application
 
-Pega PowerPoint Generator ships with PptxDemo sample application. Follow the following steps to install the and run application:
+Pega PowerPoint Generator ships with the PptxDemo sample application. Follow these steps to install the and run application:
 
 * Import the `pptxdemo.zip` RAP from examples directory.
 * Restart your application server.
@@ -72,7 +72,7 @@ This is the main user interface for the component. It allows the user to:
 #### PowerPointConfiguration Flow Action
 
 This is the main user interface for the component configuration. It allows the user to:
-- Select a different locale, the default locale is the requestor locale.
+- Select a different locale. The default locale is the requestor locale.
 - Select the date/datetime format:
 
 | Format | Date                       | DateTime                           
@@ -80,7 +80,7 @@ This is the main user interface for the component configuration. It allows the u
 | Short  | 1/8/20                     | 1/8/20 8:02 PM                     |
 | Medium | Jan 8, 2020                | Jan 8, 2020 8:02 PM                |
 | Long   | January 8, 2020            | January 8, 2020 8:02 PM            |
-| Medium | Wednesday, January 8, 2020 | Wednesday, January 8, 2020 8:02 PM |
+| Full   | Wednesday, January 8, 2020 | Wednesday, January 8, 2020 8:02 PM |
 
 - Create a link to the case and add it to the first slide.
 - Configure the number of rows per slide for tables.
@@ -105,24 +105,23 @@ This is the main user interface for the component configuration. It allows the u
 
 | Symbol | Name|Example | Result                 |                                   
 |--------|--------------|------------------------|----------------------------------|
-| I     | Integer      | `{{.MyProp Format=I}}` | 12,345                           |
-| N     | No format    | `{{.MyProp Format=N}}` | The property clipboard value.    |
-| C     | Currency     | `{{.MyProp Format=C}}` | $12,345.00 (based on the locale) |
-| K     | Thousands    | `{{.MyProp Format=K}}` | 12.34K                           |
-| M     | Millions     | `{{.MyProp Format=M}}` | 1.23M                            |
+| I     | Integer      | `{{.MyProp Format=I}}`  | 12,345                           |
+| N     | No format    | `{{.MyProp Format=N}}`  | The property clipboard value.    |
+| C     | Currency     | `{{.MyProp Format=C}}`  | $12,345.00 (based on the locale) |
+| K     | Thousands    | `{{.MyProp Format=K}}`  | 12.34K                           |
+| M     | Millions     | `{{.MyProp Format=M}}`  | 1.23M                            |
 
 > By default, the component uses the requestor locale to generate currency symbol. If a different locale is selected in the settings screen, the component uses the settings locale.
 
 ### Default formats
 
-| Property Type | Example                        
-|---------------|--------------------------------|
-| Boolean       | true or false                  |
-| Date.         | Jan 8, 2020 (Medium)           |
-| DateTime      | Jan 8, 2020 8:02 PM (Medium)   |
-| Decimal       | 12,345.67                      |
-| Double        | 12,345.67                      |
-| Integer       | 12345                          |
+| Property Type   | Example                        
+|-----------------|--------------------------------|
+| Boolean         | true or false                  |
+| Date            | Jan 8, 2020 (Medium)           |
+| DateTime        | Jan 8, 2020 8:02 PM (Medium)   |
+| Decimal/Double  | 12,345.67                      |
+| Integer         | 12345                          |
 
 >Default format is be based on the requestor or the selected locale. The example above uses en_US locale.
 
@@ -134,8 +133,8 @@ $Table action generates PowerPoint tables from a Report Definition, a Data Page 
 
 |Data Source|Syntax|Description
 |--|--|--|
-|Report Definition|`{{$Table Data-PegaPowerPointTest.PegaPowerPointTabeTest}}`|Generates a table from `PegaPowerPointTabeTest` Report Definition
-|Report Definition with Parameters|`{{$Table Data-PegaPowerPointTest.PegaPowerPointTabeWithParamsTest ID=.ID Quarter=.Quarter}}`|Generates a table from `PegaPowerPointTabeWithParamsTest` Report Definition with parameters Quarter equals .Quarter property.
+|Report Definition|`{{$Table Data-PegaPowerPointTest.PegaPowerPointTableTest}}`|Generates a table from `PegaPowerPointTableTest` Report Definition
+|Report Definition with Parameters|`{{$Table Data-PegaPowerPointTest.PegaPowerPointTableWithParamsTest ID=.ID Quarter=.Quarter}}`|Generates a table from `PegaPowerPointTableWithParamsTest` Report Definition with parameters Quarter equals .Quarter property.
 |Data Page|`{{$Table D_PegaPowerPointTestList.pxResults}}`|Generates a table from a Data Table
 |Data Page with Parameters|`{{$Table D_PegaPowerPointTestList.pxResults ID=.ID Quarter=.Quarter}}`|Generate table from a Data Table with parameters Quarter equals .Quarter property.
 |PageList|`{{$Table pyWorkPage.Clients}}`|Generates a table from a PageList
@@ -210,21 +209,21 @@ $Image action generates a PowerPoint image from a binary file.
 ## Pega Mail Merge Syntax
 
 Pega Mail Merge is the expression language behind Pega PowerPoint Generator. Users  can include expressions in their PowerPoint template to reference clipboard properties or to perform actions. 
-<pre>
-IDENTIFIER:             Any valid Pega property  
-property_reference:     Property | DataPage_Property | PageList Property  
-rule_reference:         Class '.' IDENTIFIER+   
-reference:              property_reference | rule_reference   
-action:	                '$'(Table|Bullets|PieChart|BarChart|LineChart|Image|SectionTable)  
-param:                  IDENTIFIER'='reference  
-params:                 param (' ' param)*  
-columns_expr:           Columns '=' '[' IDENTIFIER (', ' IDENTIFIER)* ']'  
-headers_expr:           Headers '=' '[' IDENTIFIER (', ' IDENTIFIER)* ']'  
-format_expr:            Format  '=' '[' IDENTIFIER (', ' IDENTIFIER)* ']'  
-action_expr:            action ' ' reference  
-property_stmt:          '{{' rule_reference ('Format' '=' IDENTIFIER)? params? '}}'  
-action_stmt:            '{{' action_expr columns_expr? headers_expr? format_expr? params? '}}'  
-</pre>
+
+IDENTIFIER:				Any valid Pega property
+property_reference:	Property | DataPage_Property | PageList Property
+rule_reference: 			Class '.' IDENTIFIER+
+reference:					property_reference | rule_reference
+action:						'$'(Table|Bullets|PieChart|BarChart|LineChart|Image|SectionTable)
+param:						IDENTIFIER'='reference
+params:						param (' ' param)*
+columns_expr:				Columns '=' '[' IDENTIFIER (', ' 	IDENTIFIER)* ']'
+headers_expr:			Headers '=' '[' IDENTIFIER (', ' 	IDENTIFIER)* ']'
+format_expr:					Format '=' '[' IDENTIFIER (', ' 	IDENTIFIER)* ']'
+action_expr:				action ' ' reference
+property_stmt:			'{{' rule_reference ('Format' '=' IDENTIFIER)? params? '}}'
+action_stmt:				'{{' action_expr columns_expr? headers_expr? format_expr? params? '}}'
+
 > Actions are not case sensitive
 
 ## Limitations
