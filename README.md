@@ -151,8 +151,8 @@ $Bullet action generates PowerPoint bullets from a Report Definition, a Data Pag
 
 |Data Source|Syntax|Description
 |--|--|--|
-|Report Definition|`{{$Bullet Data-PegaPowerPointTest.PegaPowerPointTabeTest.Name}}`|Generates bullets from the `Name` property of `PegaPowerPointTabeTest` Report Definition. 
-|Report Definition with Parameters|`{{$Bullets Data-PegaPowerPointTest.PegaPowerPointTabeWithParamsTest.Name Quarter=.Quarter}}`|Generates bullets from the `Name` property of `PegaPowerPointTabeWithParamsTest` Report Definition with parameters Quarter equals .Quarter property.
+|Report Definition|`{{$Bullet Data-PegaPowerPointTest.PegaPowerPointTableTest.Name}}`|Generates bullets from the `Name` property of `PegaPowerPointTableTest` Report Definition. 
+|Report Definition with Parameters|`{{$Bullets Data-PegaPowerPointTest.PegaPowerPointTableWithParamsTest.Name Quarter=.Quarter}}`|Generates bullets from the `Name` property of `PegaPowerPointTableWithParamsTest` Report Definition with parameters Quarter equals .Quarter property.
 |Data Page|`{{$Bullets D_ListPegaPowerPointBulletsTest.pxResults.Name}}`|Generates bullets from the `Name` property of `D_ListPegaPowerPointBulletsTest` Data Page.
 |Data Page with Parameters|`{{$Bullets D_ListPegaPowerPointBulletsTest.pxResults.Name ID=.ID Quarter=.Quarter}}`|Generates bullets from the `Name` property of `D_ListPegaPowerPointBulletsTest` Data Page with parameters Quarter equals .Quarter property
 |PageList|`{{$Bullets pyWorkPage.Clients.Name}}`|Generates bullets from the `Name` property of `Clients` PageList.
@@ -163,8 +163,8 @@ $PieChart action generates PowerPoint pie chart from a Report Definition,
 
 |Data Source|Syntax|Description
 |--|--|--|
-|Report Definition|`{{$PieChart Data-PegaPowerPointTest.PegaPowerPointTabeTest}}`|Generates pie chart from the `PegaPowerPointTabeTest` Report Definition. 
-Report Definition with Parameters|`{{$PieChart Data-PegaPowerPointTest.PegaPowerPointTabeWithParamsTest Quarter=.Quarter}}`|Generates pie chart from the `PegaPowerPointTabeWithParamsTest` Report Definition with parameters Quarter equals .Quarter property.
+|Report Definition|`{{$PieChart Data-PegaPowerPointTest.PegaPowerPointTableTest}}`|Generates pie chart from the `PegaPowerPointTableTest` Report Definition. 
+Report Definition with Parameters|`{{$PieChart Data-PegaPowerPointTest.PegaPowerPointTableWithParamsTest Quarter=.Quarter}}`|Generates pie chart from the `PegaPowerPointTableWithParamsTest` Report Definition with parameters Quarter equals .Quarter property.
 
 ### BarChart Action
 
